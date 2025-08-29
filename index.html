@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Card Component</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- 
+      RECIPE CARD COMPONENT USAGE
+      - `data-title`: The main title of the recipe.
+      - `data-subtitle`: A short description.
+      - `data-servings`: Number of servings.
+      - `data-time`: Prep/cook time.
+      - `data-source-type`: The source icon (youtube, book-open, instagram, users).
+      - `data-source-text`: The name of the source.
+      - `data-image-src`: URL for the recipe image.
+      - `theme`: The color theme (appetizer, dessert, sides, or default entree).
+    -->
+    <recipe-card data-title="Rainbow Salad" data-subtitle="Fast and delicious salad for the whole family"
+        data-servings="2 servings" data-time="15 minutes" data-source-type="book-open" data-source-text="Cookbook"
+        data-image-src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop"
+        theme="appetizer">
+
+        <!-- Ingredients are passed as a JSON string in a script tag -->
+        <script type="application/json" slot="ingredients">
+            [
+                "Item 1",
+                "Item 2",
+                "Item 3",
+                "Item 4",
+                "Item 5",
+                "Item 6"
+            ]
+        </script>
+
+        <!-- Directions are passed as a JSON string in a script tag -->
+        <script type="application/json" slot="directions">
+            [
+                "Nunc nulla velit, feugiat vitae ex quis, lobortis porta leo. Donec dictum lectus in ex.",
+                "Pellentesque habitant morbi tristique. Nunc nulla velit, feugiat vitae ex quis, lobortis porta leo.",
+                "Donec dictum lectus in ex. Ientesque habitant morbi tristique. Nunc nulla velit, feugiat vitae ex quis, lobortis porta leo.",
+                "Habitant morbi tristique.Nunc nulla velit, feugiat vitae ex quis, lobortis porta leo. Donec dictum lectus in ex.",
+                "Pellentesque habitant morbi tristique.",
+                "Nunc nulla velit, feugiat vitae ex quis, lobortis porta leo. Donec dictum lectus in ex."
+            ]
+        </script>
+
+        <!-- Notes are passed as simple text in a div -->
+        <div slot="notes">
+            Nunc nulla velit, feugiat vitae ex quis, lobortis porta leo. Donec dictum lectus in ex. Ientesque habitant
+            morbi tristique.
+        </div>
+    </recipe-card>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
